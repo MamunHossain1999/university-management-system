@@ -34,7 +34,8 @@ const FormInput = ({
             name={name}
             rules={validation}
             render={({ ...field}) => (
-                <Input
+               type === "password" ?
+                <Input.Password  // password show and hide eye icon use ant design
                     id={id}
                     type={type}
                     size={size}
@@ -43,6 +44,16 @@ const FormInput = ({
                     value={value ? value : field.value}
                    
                 />
+                :
+                <Input
+                id={id}
+                type={type}
+                size={size}
+                placeholder={placeholder}
+                {...field}
+                value={value ? value : field.value}
+               
+            />
             )}
         />
         </>
